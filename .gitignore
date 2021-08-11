@@ -30,3 +30,11 @@ tf.plan
 
 # Make it possible to check-in the bootstrap state
 !/example/bootstrap/**/*.tfstate
+./**/.terraform
+./**/*.tfstate
+./**/*.tfstate.backup
+./**/.terraform.lock.hcl
+example/.terraform.lock.hcl
+example/bootstrap/.terraform.lock.hcl
+example/bootstrap/terraform.tfstate
+modules/jenkins_platform/.terraform.lock.hcl

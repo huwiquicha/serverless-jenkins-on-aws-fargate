@@ -109,10 +109,11 @@ resource "aws_ecs_service" jenkins_controller {
   network_configuration {
     subnets          = var.jenkins_controller_subnet_ids
     security_groups  = [aws_security_group.jenkins_controller_security_group.id]
-    assign_public_ip = false
+    assign_public_ip = true
   }
 
-  depends_on = [aws_lb_listener.https]
+  /* depends_on = [aws_lb_listener.https] */
+  depends_on = [aws_lb_listener.http]
 }
 
 

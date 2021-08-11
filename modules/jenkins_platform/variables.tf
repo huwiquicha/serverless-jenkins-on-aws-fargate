@@ -161,6 +161,7 @@ variable alb_subnet_ids {
 variable alb_acm_certificate_arn {
   type        = string
   description = "The ACM certificate ARN to use for the alb"
+  default     = null
 }
 
 variable jenkins_controller_port {

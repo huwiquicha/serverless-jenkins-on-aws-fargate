@@ -21,11 +21,18 @@ resource "aws_s3_bucket" "this" {
     }
   }
 
+  lifecycle {
+    prevent_destroy = false
+  }
+
   versioning {
     enabled = true
   }
 
   tags = local.tags
+  // This is only here so we can destroy the bucket as part of automated tests. You should not copy this for production
+ // usage
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_public_access_block" "this" {
